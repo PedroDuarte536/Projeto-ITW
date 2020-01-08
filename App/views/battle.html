@@ -1,0 +1,66 @@
+<section>
+    <div id="battle">
+        <h3 data-bind="text:title"></h3>
+        <div id="choosePk">
+            <div class="row" data-bind="foreach: records">
+                <div class="pk col-sm-12 col-md-4 col-lg-3">
+                    <div class="content">
+                        <div class="image" data-bind="attr: {backgroundImage: 'url('+frontDefault+')'}"></div>
+                        <h3 data-bind="text: Name"></h3>
+                        <div data-bind="foreach: Types">
+                            <div class="sep col-12" data-bind="style: {backgroundColor: Color}"><p data-bind="text: Name"></p></div>
+                            </div>
+                        <a data-bind="click: $root.choosePk"><div class="sep col-12 button"><p>Choose</p></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="chooseMoves" style="display: none;">
+            <div class="row" data-bind="foreach: moves">
+                <div class="pk col-sm-12 col-md-4 col-lg-3" data-bind="visible: power && accuracy">
+                    <div class="content">
+                        <h3 data-bind="text: Name"></h3>
+                        <div class="sep col-12"><p>Power: <span data-bind="text: power"></span></p></div>
+                        <div class="sep col-12"><p>Accuracy: <span data-bind="text: accuracy"></span>%</p></div>
+                        <a data-bind="click: $root.moveClick"><div class="sep col-12 button"><p>Choose</p></div></a>
+                    </div>
+                </div>
+            </div>
+            <button class="col-12 btn btn-dark" data-bind="click: finishMoves">Finish</button>
+        </div>
+        <div id="game" style="display: none;">
+            <div class="row" data-bind="foreach: gamePokemons">
+                <div class="pk col-6">
+                    <div class="content gamePoke" data-bind="attr: {id:Id}">
+                        <div class="image" data-bind="attr: {backgroundImage: 'url('+frontDefault+')'}"></div>
+                        <h3 data-bind="text: Name"></h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuemin="0" data-bind="text:curHP, attr: {'aria-valuenow':curHP,'aria-valuemax': HP}"></div>
+                        </div>
+                        <div class="sep col-12" data-bind="foreach: Moves">
+                            <div class="sep col-12"><p data-bind="text: Name"></p></div>
+                            <div class="sep col-12"><p>Power: <span data-bind="text: power"></span></p></div>
+                            <div class="sep col-12"><p>Accuracy: <span data-bind="text: accuracy"></span>%</p></div>
+                            <a style="display: none" data-bind="click: $root.useMove"><div class="sep col-12 button"><p>Use</p></div></a>
+                            <hr>
+                        </div>
+                        <a style="display: none" data-bind="click: $root.useRandom"><div class="sep col-12 button"><p>Random</p></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Game Info</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" data-bind="text: gameInfo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

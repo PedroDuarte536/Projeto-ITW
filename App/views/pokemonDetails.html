@@ -1,0 +1,109 @@
+﻿<section>
+    <div class="container" id="details" data-bind="with: record">
+        <div class="col-sm-12 col-md-4 col-lg-6 imageholder">
+            <div class="image" data-bind="attr: {backgroundImage: 'url('+Sprites.Front_Default+')'}"></div>
+            <div class="col-12 imgs" data-bind="foreach:$root.sprites"><button class="imageBtn" data-bind="visible: Link, attr:{onClick: 'changeImage(&quot;'+Link+'&quot;)'}"><span data-bind="text: Name"></span></button></div>
+            <div id="desc" class="col-12" data-bind="with: $root.desc"><p data-bind="text: Text"></p></div>
+        </div>
+        <div class="pokemon col-sm-12 col-md-4 col-lg-3">
+            <div class="content">
+                <div>
+                    <h3 data-bind="text: Name"></h3>
+                    <!-- ko foreach: Pokemon_TypeMaps -->
+                    <div class="col-12 sep" data-bind="style:{backgroundColor: Color}"><span class="col-12"><h1>Tipo</h1></span><p data-bind="text:Name"></p></div>
+                    <!-- /ko -->
+                    <!-- ko with: $root.specie -->
+                    <!-- ko foreach: Habitat -->
+                    <div class="col-12 sep"><span class="col-12"><h1>Habitat</h1></span><p data-bind="text: Name"></p></div>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="pokemon col-sm-12 col-md-4 col-lg-3">
+            <div class="content" id="moves">
+                <button class="controlBtn" data-bind="click:$root.prevMoves"><i class="fa fa-arrow-up"></i></button>
+                <div data-bind="foreach: $root.movesList">
+                    <div class="col-12 sep"><p data-bind="text: Name"></p></div>
+                </div>
+                <button class="controlBtn" data-bind="click:$root.nextMoves"><i class="fa fa-arrow-down"></i></button>
+            </div>
+        </div>
+
+        <div class="row col-12">
+            <div class="pokemon col-12">
+                <div id="stats" class="content regSize">
+                    <!-- ko foreach: Pokemon_Stats -->
+                    <p class="stat"><b data-bind="text: Name"></b>: <span data-bind="text: BaseValue"></span></p>
+                    <!-- /ko -->
+                    <hr>
+                    <!-- ko with: $root.specie -->
+                    <p class="stat"><b>BaseHappiness</b>: <span data-bind="text: BaseHappiness"></span></p>
+                    <!-- /ko -->
+                    <p class="stat" ><b>BaseExperience</b>: <span data-bind="text: BaseExperience"></span></p>
+                </div>
+            </div>
+
+            <div class="pokemon col-12" data-bind="if: $root.showEvos">
+                <div class="content regSize">
+                    <h1>Evoluções</h1>
+                    <!-- ko with: $root -->
+                    <!-- ko foreach: evolutions -->
+                    <div class="pokemon">
+                        <div class="image" data-bind="attr: {backgroundImage: 'url('+Image+')'}"></div>
+                        <div class="imbtn"><a data-bind="text: Name, attr: {href: '#pokemonDetails/'+Id}"></a></div>
+                    </div>
+                    <i class="fa fa-arrow-right evo"></i>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                </div>
+            </div>
+
+            <div class="pokemon col-sm-12 col-md-6 col-lg-4">
+                <div class="content">
+                    <div>
+                        <h3>Egg</h3>
+                        <!-- ko with: $root.specie -->
+                        <!-- ko foreach: eggGroup -->
+                        <div class="col-12 sep" data-bind="style:{backgroundColor: Color}"><span class="col-12"><h1>Egg Group</h1></span><p data-bind="text:Name"></p></div>
+                        <!-- /ko -->
+                        <div class="col-12 sep"><span class="col-12"><h1>Hatch Counter</h1></span><p data-bind="text: HatchCounter"></p></div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pokemon col-sm-12 col-md-6 col-lg-4">
+                <div class="content">
+                    <!-- ko with: $root.specie -->
+                    <div class="col-12 genImage" data-bind="style: {backgroundImage: 'url(\'images/logos/'+Generation+'.png\')'}"></div>
+                    <p><b>Generation</b>: <span class="genText" data-bind="text: Generation"></span></p>
+                    <!-- /ko -->
+                </div>
+            </div>
+
+            <div class="pokemon col-sm-12 col-lg-4">
+                <div class="content">
+                    <h1>Catch Rate</h1>
+                    <canvas id="gauge"></canvas>
+                    <p id="gauge-value"></p>
+                </div>
+            </div>
+
+            <div class="pokemon col-12">
+                <div class="content regSize" data-bind="visible: $root.showSpecie">
+                    <h1>Mesma Espécie</h1>
+                    <!-- ko with: $root.specie -->
+                    <!-- ko foreach: pokemon -->
+                    <div class="pokemon">
+                        <div class="image" data-bind="attr: {backgroundImage: 'url('+frontDefault+')'}"></div>
+                        <div class="imbtn"><a data-bind="text: Name, attr: {href: '#pokemonDetails/'+Id}"></a></div>
+                    </div>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

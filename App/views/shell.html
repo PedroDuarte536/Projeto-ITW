@@ -1,0 +1,10 @@
+﻿<div class="darker"></div>
+<div id="navSite">
+    <button data-bind="click: menu">Open Menu</button>
+    <ul id="items" data-bind="foreach: router.navigationModel" style="display: none;">
+        <li class="nav-item" data-bind="css: { active: isActive }">
+            <a class="nav-link" data-bind="attr: { href: hash }, text: title"></a>
+        </li>
+    </ul>
+</div>
+<div class="page-host container" data-bind="router"></div>

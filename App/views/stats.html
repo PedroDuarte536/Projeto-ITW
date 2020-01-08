@@ -1,0 +1,27 @@
+<section>
+    <div class="container" data-bind="template: {afterRender: init}">
+        <div class="row col-12">
+            <div class="pokemon col-12">
+                <div class="content regSize">
+                    <div id="piechart" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="pokemon col-sm-12 col-md-6" data-bind="with:fav">
+                <div class="image" data-bind="attr: {backgroundImage: 'url('+frontDefault+')'}"></div>
+                <div class="content">
+                    <h3 data-bind="text: Name"></h3>
+                    <p style="line-height: normal;text-decoration: underline">Pokemon mais usado</p>
+                    <a data-bind="attr: {href: '#pokemonDetails/'+Id}"><div class="sep col-12 button"><p>More Details</p></div></a>
+                </div>
+            </div>
+            <div class="pokemon col-sm-12 col-md-6" data-bind="with:best">
+                <div class="image" data-bind="attr: {backgroundImage: 'url('+frontDefault+')'}"></div>
+                <div class="content">
+                    <h3 data-bind="text: Name"></h3>
+                    <p style="line-height: normal;text-decoration: underline">Pokemon com mais vitórias</p>
+                    <a data-bind="attr: {href: '#pokemonDetails/'+Id}"><div class="sep col-12 button"><p>More Details</p></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

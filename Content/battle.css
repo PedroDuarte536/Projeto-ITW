@@ -1,0 +1,45 @@
+#battle > h3 {
+    background-color: #eee;
+    padding: 5px 15px;
+    position: fixed;
+    z-index:40;
+}
+
+#battle .pk {
+    background-color:white;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+#battle .image {
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;
+}
+
+#battle h3 {
+    text-transform: capitalize;
+}
+
+#battle .sep {
+    text-transform: capitalize;
+    font-weight: bolder;
+    padding: 5px;
+    filter: brightness(1.5);
+}
+
+#battle .sep > p {
+    margin: 0;
+}
+
+#battle .sep.button {
+    background-color: #333;
+    margin: 5px auto;
+    color: white;
+    cursor: pointer;
+}
+
+#battle .sep.button:hover {
+    filter: brightness(1);
+}

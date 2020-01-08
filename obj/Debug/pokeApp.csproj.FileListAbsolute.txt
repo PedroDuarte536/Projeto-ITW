@@ -1,0 +1,17 @@
+C:\Projectos\pokemon\pokeApp\bin\pokeApp.dll.config
+C:\Projectos\pokemon\pokeApp\bin\pokeApp.dll
+C:\Projectos\pokemon\pokeApp\bin\pokeApp.pdb
+C:\Projectos\pokemon\pokeApp\bin\Antlr3.Runtime.dll
+C:\Projectos\pokemon\pokeApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Projectos\pokemon\pokeApp\bin\Newtonsoft.Json.dll
+C:\Projectos\pokemon\pokeApp\bin\System.Web.Optimization.dll
+C:\Projectos\pokemon\pokeApp\bin\WebActivator.dll
+C:\Projectos\pokemon\pokeApp\bin\WebGrease.dll
+C:\Projectos\pokemon\pokeApp\bin\Antlr3.Runtime.pdb
+C:\Projectos\pokemon\pokeApp\bin\Newtonsoft.Json.xml
+C:\Projectos\pokemon\pokeApp\bin\System.Web.Optimization.xml
+C:\Projectos\pokemon\pokeApp\obj\Debug\pokeApp.csprojAssemblyReference.cache
+C:\Projectos\pokemon\pokeApp\obj\Debug\pokeApp.csproj.CoreCompileInputs.cache
+C:\Projectos\pokemon\pokeApp\obj\Debug\pokeApp.csproj.CopyComplete
+C:\Projectos\pokemon\pokeApp\obj\Debug\pokeApp.dll
+C:\Projectos\pokemon\pokeApp\obj\Debug\pokeApp.pdb

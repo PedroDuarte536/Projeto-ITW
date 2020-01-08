@@ -1,0 +1,418 @@
+﻿html, body, div.darker {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+div.darker {
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+}
+
+div#navSite {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    text-align: right;
+    z-index: 30;
+}
+
+div#navSite #items li {
+    background-color: white;
+    border: 1px solid black;
+    transition: .4s ease;
+}
+
+div#navSite #items li:hover {
+    background-color: #ddd;
+}
+
+div#navSite li {
+    list-style: none;
+}
+
+#top {
+    background-color: #5689a6;
+    margin: 50px 0px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#top > div {
+    text-align: center;
+}
+
+#top > div > a.types {
+    text-decoration: none;
+    padding: 5px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-weight: bolder;
+    transition: .5s ease;
+    display: inline-block;
+    color: black;
+    cursor: pointer;
+}
+
+#top > div > a.types.selected {
+    border: 5px solid black;
+}
+
+#top > div > a.types:hover {
+    filter: brightness(0.7);
+}
+
+#top #autocomplete {
+    max-height: 300px;
+    background-color: #eee;
+    position: absolute;
+    z-index: 20;
+    overflow-y: scroll;
+}
+
+#top #autocomplete p {
+    border-radius: 5px;
+    border: 2px solid #fff;
+    background-color: #eee;
+    margin:0px;
+    text-transform: capitalize;
+    padding: 5px;
+    margin: 5px;
+    transition: .3s ease;
+}
+
+#top #autocomplete p:hover {
+    filter: brightness(.7);
+    cursor: pointer;
+}
+
+div.container {
+    padding: 50px 50px;
+}
+
+div.pokemon {
+    padding: 5px;
+    text-align: center;
+}
+
+div.pokemon > div.image {
+    border-radius: 50%;
+    z-index: 10;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    background-color: #ddd;
+    background-position: center center;
+    border: 10px solid #ddd;
+    display: inline-block;
+    transition: .5s ease;
+    filter: brightness(1);
+    background-image: url(https://huntpng.com/images250/pikachu-face-png-19.png);
+    background-repeat: no-repeat;
+}
+
+div.pokemon:hover > div.image {
+    filter: brightness(1.2);
+    height: 110px;
+    width: 110px;
+    background-color: #aaa;
+    border: 10px solid #aaa;
+}
+
+div.pokemon > div.content {
+    position: relative;
+    top: -50px;
+    padding: 10px;
+    padding-top: 60px;
+    background-color: white;
+    height:380px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px 0px white;
+    transition: .3s ease;
+}
+
+div.pokemon:hover > div.content {
+    box-shadow: 0px 0px 25px 2px white;
+}
+
+div.pokemon > div.content h3 {
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+
+div.pokemon > div.content div.sep {
+    position: relative;
+    top:0px;
+    font-weight: bolder;
+    padding: 5px;
+    height: 70px;
+    background-color: #eee;
+    border-radius: 15px;
+    box-shadow: 0px -5px 10px -5px black;
+    cursor: default;
+    transition: .3s ease;
+}
+
+div.pokemon > div.content div.sep:hover {
+    top:-5px;
+    transform: rotate(-5deg);
+}
+
+div.pokemon > div.content div.sep > p, div.pokemon > div.content > p {
+    line-height: 60px;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+div.pokemon > div.content div.sep > span {
+    position: absolute;
+    text-align: left;
+}
+
+div.pokemon > div.content div.sep > span > h1 {
+    font-size: 12px;
+    text-transform: uppercase;
+    position: relative;
+    left: -50%;
+    font-weight: bolder;
+}
+
+div.pokemon > div.content a {
+    text-decoration: none;
+    color: inherit;
+}
+
+div.pokemon > div.content div.button {
+    transition: .2s ease;
+    cursor: pointer;
+    background-color: #ddd;
+    font-size: 18px;
+}
+
+div.pokemon > div.content div.sep.button:hover {
+    filter: brightness(1.1);
+}
+
+div#nav {
+    position: fixed;
+    bottom: 15px;
+    z-index: 10;
+    text-align: center;
+    left: calc(50% - 282px);
+}
+
+div#nav.sm {
+    left: calc(50% - 57px);
+}
+
+.pagination > li > a {
+    background-color: #6c757d;
+    color: #fff;
+    border-color: #6c757d;
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    color: white;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.pagination > .active > a {
+    color: white;
+    background-color: #545b62 !Important;
+    border-color: #4e555b !Important;
+}
+
+.pagination > .active > a:hover {
+    color: white;
+}
+
+div#details {
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+div#details > div {
+    display: inline-block;
+}
+
+div#details > div:nth-child(3) {
+    float: right;
+}
+
+div#details > div:nth-child(2) {
+    float: left;
+}
+
+div#details div.content {
+    position: static;
+    height: 350px;
+    padding-top: 25px;
+}
+
+div#details div.content.regSize {
+    height: auto;
+}
+
+div#details div.row {
+    display: inline-flex;
+}
+
+div#details > div.imageholder > div.image {
+    height: 350px;
+    border-radius: 20px;
+    background-color: rgba(200,200,200,.5);
+    border: 3px solid #ddd;
+    background-image: url(https://huntpng.com/images250/pikachu-face-png-19.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+div#details > div.imageholder > div.imgs {
+    max-width: 100%;
+    padding: 10px;
+}
+
+div#details > div.imageholder > div.imgs > button {
+    background-color: #eee;
+    border-radius: 5px;
+    border:0;
+    height: 30px;
+    margin: 3px;
+    transition: .3s ease;
+}
+
+div#details > div.imageholder > div.imgs > button:hover {
+    background-color: #ccc;
+}
+
+div#moves button.controlBtn {
+    margin: 10px auto;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 0px;
+    background-color: #333;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+}
+
+div#moves button.controlBtn:disabled {
+    background-color: #777;
+    color: white;
+}
+
+div#details > div.imageholder > div#desc {
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #eee;
+    text-align: center;
+    border-radius: 10px;
+}
+
+div#details > div.imageholder > div#desc > p {
+    margin: 0;
+}
+
+div#stats {
+    text-transform: capitalize;
+    padding-bottom: 25px;
+}
+
+div#stats p.stat {
+    margin:0;
+}
+
+div#details div.genImage {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+div#details .genText {
+    text-transform: none;
+}
+
+canvas#gauge {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+p#gauge-value {
+    position: relative;
+    top: -90px;
+}
+
+div#details div.content div.pokemon {
+    display: inline-block;
+}
+
+div#details div.content div.pokemon:hover div.image {
+    filter: brightness(.6);
+}
+
+div#details div.content div.pokemon div.image {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-size: contain;
+    background-color: #ddd;
+    background-position: center center;
+    border: 10px solid #ddd;
+    transition: .5s ease;
+    filter: brightness(1);
+    background-image: url(https://huntpng.com/images250/pikachu-face-png-19.png);
+    background-repeat: no-repeat;   
+}
+
+div#details div.content div.pokemon a {
+    border-radius: 50px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-transform: capitalize;
+    transition: .3s ease;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+div#details div.content div.pokemon a:hover {
+    padding: 10px 15px;
+}
+
+div#details div.content div.pokemon div.imbtn {
+    padding: 0px 5px;
+    transition: .3s ease;
+}
+
+div#details div.content div.pokemon div.imbtn:hover {
+    padding: 0;
+}
+
+div#details div.content .fa.evo {
+    position: relative;
+    top: -80px;
+}
+
+div#details div.content .fa.evo:last-child {
+    display: none;
+}
+
+i.fa.fa-heart.red {
+    color: red;
+}

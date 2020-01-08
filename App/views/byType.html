@@ -1,0 +1,41 @@
+<section>
+    <div class="container">
+        <div id="top" class="col-12">
+            <div class="input-group mb-3">
+                <input type="text" id="searchInput" name="searchInput" class="form-control" placeholder="Nome do Pokemon" data-bind="event: { input: autofn, focusout: hideauto }">
+                <div>
+                    <button class="btn btn-dark" type="button" data-bind="click: search">Procurar</button>
+                </div>
+            </div>
+            
+            <div id="autocomplete" class="col-10" data-bind="foreach: auto"><p data-bind="text: Name, click: $root.autoselect"></p></div>
+                
+            <div class="col-12" data-bind="foreach: types"><a class="types" data-bind="text: Name, style: {backgroundColor: Color}, attr: {href: '#byType/'+Name}"></a></div>
+            
+            <a href="#pokemons" class="btn btn-dark" style="margin-top: 10px;">Limpar Filtros</a>
+        </div>
+            
+        <div class="row" data-bind="foreach: records">
+            <div class="pokemon col-sm-12 col-md-4 col-lg-3">
+                <div class="image" data-bind="attr: {backgroundImage: 'url('+frontDefault+')'}, style: {backgroundColor: Types[0].Color, borderColor: Types[0].Color}"></div>
+                <div class="content">
+                    <i class="fa fa-heart" data-bind="click: $root.addFav, css: $root.isFav($data)"></i>
+                    <h3 data-bind="text: Name"></h3>
+                    <div data-bind="foreach: Types">
+                        <div class="sep col-12" data-bind="style: {backgroundColor: Color}"><p data-bind="text: Name"></p></div>
+                        </div>
+                    <a data-bind="attr: {href: '#pokemonDetails/'+Id}"><div class="sep col-12 button"><p>More Details</p></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="nav" class="sm">
+        <div class="col-12 pt-2">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" title="Previous Page" data-bind="click: toPage.bind($data,-1)">←</a></li>
+                <li class="page-item"><a class="page-link" title="Next Page" data-bind="click: toPage.bind($data,1)">→</a></li>
+            </ul>
+        </div>
+    </div>
+</section>

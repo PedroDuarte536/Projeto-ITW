@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.example"
+        versionCode = "10" 
+        version     = "1.0.0" >
+        
+    <plugin name="cordova-plugin-whitelist" spec="~1.3.4" />
+        
+    <icon src="images/pokemon-icon.png" />
+
+    <name>Pokemons</name>
+
+    <description>
+        Pokemons
+    </description>
+
+    <author href="https://build.phonegap.com" email="pedro.dld536@gmail.com">
+        ITW
+    </author>
+        
+    <access origin="*" />
+    <access origin="http://ieeta-cloudpt.web.ua.pt" />
+    <allow-navigation href="http://*/*" />
+    <allow-intent href="https://*/*" />
+
+    <!-- to enable individual permissions use the following examples -->
+    <feature name="http://api.phonegap.com/1.0/network"/>
+</widget>

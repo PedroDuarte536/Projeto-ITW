@@ -1,0 +1,64 @@
+﻿<section>
+    <h1 class="col-12" style="color:white;position: relative;text-align: center">Bem Vindo! Pokemon Pokedex Project</h1>
+    <p style="color:white;position: relative;text-align:left">Bem vindo á página principal do pokedex do projeto de ITW 2019/20. Aqui poderás encontrar uma enciclopédia, referida na série como "Pokedex", com (quase) todos os pokemons existentes na série de jogos de pokemon e com vários filtros e até mesmo um simulador do jogo real!! </p>
+    <h1 class="col-12" style="color:white;position: relative;text-align: center">O que é um pokemon?</h1>
+    <p style=" color:white ;position: relative;text-align:left">-Pokémon é uma franquia que pertence a The Pokémon Company, tendo sido criada por Satoshi Tajiri em 1995. Ela é centrada em criaturas ficcionais chamadas "Pokémon", que os seres humanos capturam e os treinam para lutarem um contra o outro como um esporte.</p>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/image0.jpg" alt="aqui">
+      <div class="carousel-caption">
+       <h3>Blaziken</h3>
+       <p>Última Evolução de Torchic</p>
+     </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/image1.jpg" alt="Chicago">
+      <div class="carousel-caption">
+       <h3>Mewtwo</h3>
+       <p>Pokemon Lendário da 1ª Geração</p>
+     </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/image2.jpg" alt="New York">
+      <div class="carousel-caption">
+       <h3>Darkrai</h3>
+       <p>Um Pokemon Mítico, Apenas Adquirível em Eventos!</p>
+     </div>
+    </div>
+  </div>
+
+
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+    <br><h2 class="col-12" style="color:white;position: relative;text-align: center">Features</h2>
+    <div class="container" id="details">
+        <div class="row col-12" data-bind="foreach: features">
+            <div class="pokemon col-sm-12 col-md-6 col-lg-4">
+                <div class="content">
+                    <h3 data-bind="text: title"></h3>
+                    <!-- ko foreach: content -->
+                    <div class="col-12 sep"><p data-bind="text: $data"></p></div>
+                    <!-- /ko -->
+                    <a data-bind="attr: {href: ex}"><div class="sep col-12 button"><p>Ver</p></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

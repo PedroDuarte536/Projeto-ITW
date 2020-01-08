@@ -1,0 +1,55 @@
+﻿<section>
+    <div class="container">
+        <div id="top" class="col-12">
+            <div class="input-group mb-3">
+                <input type="text" id="searchInput" name="searchInput" class="form-control" placeholder="Nome do Pokemon" data-bind="event: { input: autofn, focusout: hideauto }">
+                <div>
+                    <button class="btn btn-dark" type="button" data-bind="click: search">Procurar</button>
+                </div>
+            </div>
+            
+            <div id="autocomplete" class="col-10" data-bind="foreach: auto"><p data-bind="text: Name, click: $root.autoselect"></p></div>
+                
+            <div class="col-12" data-bind="foreach: types"><a class="types" data-bind="text: Name, style: {backgroundColor: Color}, attr: {href: '#byType/'+Name}"></a></div>
+        </div>
+            
+        <div class="row" data-bind="foreach: records">
+            <div class="pokemon col-sm-12 col-md-4 col-lg-3">
+                <div class="image" data-bind="attr: {backgroundImage: 'url('+frontDefault+')'}, style: {backgroundColor: Types[0].Color, borderColor: Types[0].Color}"></div>
+                <div class="content">
+                    <i class="fa fa-heart" data-bind="click: $root.addFav, css: $root.isFav($data)"></i>
+                    <h3 data-bind="text: Name"></h3>
+                    <div data-bind="foreach: Types">
+                        <div class="sep col-12" data-bind="style: {backgroundColor: Color}"><p data-bind="text: Name"></p></div>
+                        </div>
+                    <a data-bind="attr: {href: '#pokemonDetails/'+Id}"><div class="sep col-12 button"><p>More Details</p></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="nav">
+        <div class="col-12 pt-2">
+            <ul class="pagination justify-content-center">
+                <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
+                <li class="page-item"><a class="page-link btn-secondary" title="First Page" href="#pokemons/1">⇤</a></li>
+                <li class="page-item"><a class="page-link" title="Previous Page" data-bind="attr: {href:'#pokemons/' + previousPage(),  rel:'prev'}">←</a></li>
+                <!--<li class="page-item disabled"><a class="page-link">…</a></li>-->
+                <!-- /ko -->
+                <!-- ko foreach: pageArray()-->
+                <!-- ko if:$data == $parent.currentPage() -->
+                <li class="active page-item"><a class="page-link" data-bind="attr: {title:'Current Page '+$data }, text:$data"></a></li>
+                <!-- /ko -->
+                <!-- ko if:$data != $parent.currentPage() -->
+                <li class="page-item"><a class="page-link" data-bind="attr: {href:'#pokemons/' + $data, title:'Goto Page '+$data }, text:$data"></a></li>
+                <!-- /ko -->
+                <!-- /ko -->
+                <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
+                <!--<li class="disabled page-item"><a class="page-link">…</a></li>-->
+                <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: {href:'#pokemons/' + nextPage(), rel:'next' }">→</a></li>
+                <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: {href:'#pokemons/' + totalPages() }">⇥</a></li>
+                <!-- /ko -->
+            </ul>
+        </div>
+    </div>
+</section>
